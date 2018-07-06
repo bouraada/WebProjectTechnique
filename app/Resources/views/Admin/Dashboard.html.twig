@@ -1,0 +1,32 @@
+{% extends 'BaseAdmin.html.twig' %}
+
+
+
+{% block titre %}Admin{% endblock%}
+
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Choisissez une tache a executer : </div>
+                <div class="panel-body">
+                    <div class="alert alert-success">
+                        <a href="/DBO_V3/web/listeentreprise" class="alert-link">Consulter la liste des entreprises clients</a>
+                    </div>
+                    <div class="alert alert-info">
+                        <a href="/DBO_V3/web/message" class="alert-link"> Ecrire un nouveau E-mail</a>
+                    </div>
+                    <div class="alert alert-warning">
+                        <a href="/DBO_V3/web/archives" class="alert-link">Consulter les archives clients</a>
+                    </div>
+                    <div class="alert alert-danger">
+                        <a href="/DBO_V3/web/scanDocument" class="alert-link">Scanner un nouveau document</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+{%endblock%}
+
+

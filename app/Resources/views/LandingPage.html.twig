@@ -1,0 +1,57 @@
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>{% block titre %}base.html.twig{% endblock%}</title>
+
+
+    {% block css %}
+
+        
+        <link href="/Grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/Grayscale/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Cabin:700'  rel='stylesheet' type='text/css'>
+        <link href='/Grayscale/css/grayscale.min.css' rel="stylesheet">
+    {% endblock %}
+</head>
+   
+<body>
+    <div id="wrapper">
+     
+                
+        <div id="page-wrapper">     
+            {% block body %}
+                Block BODY base_annonyme.html.twig
+            {% endblock body %}    
+        </div>     
+    </div> 
+    <div>
+        <footer>
+            {% block footer %}
+                    footer base anonyme html twig
+            {% endblock footer %}
+        </footer>
+    </div>
+            
+    {% block js %} 
+                <script src="Grayscale/vendor/jquery/jquery.min.js"></script>
+        <script src="Grayscale/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="Grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="/web/Grayscale/js/grayscale.min.js"></script>
+   {% endblock %}
+    </body>
+</html>
