@@ -48,8 +48,23 @@ class HistoriqueAbonnement
      * @ORM\Column(name="dateChangementAbonnement", type="date")
      */
     private $dateChangementAbonnement;
+    
+    
 
-
+    /**
+     * @ORM\OneToOne(targetEntity="Abonnement", mappedBy="HistoriqueAbonnement")
+     */
+    private $historiqueabonnement;
+    
+      /**
+     * @ORM\OneToOne(targetEntity="Abonne", mappedBy="HistoriqueAbonne")
+     */
+    private $abonne;
+    
+      /**
+     * @ORM\OneToOne(targetEntity="Programme", mappedBy="HistoriqueAbonnement")
+     */
+    private $programme;
     /**
      * Get id
      *

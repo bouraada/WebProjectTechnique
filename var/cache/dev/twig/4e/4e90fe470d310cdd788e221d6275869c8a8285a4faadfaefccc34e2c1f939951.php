@@ -1,6 +1,6 @@
 <?php
 
-/* @FOSUser/layout.html.twig */
+/* FOSUserBundle::layout.html.twig */
 class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170dacb9 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -19,10 +19,10 @@ class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle::layout.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle::layout.html.twig"));
 
         // line 1
         echo "<html lang=\"fr\">
@@ -49,7 +49,7 @@ class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170
         <!-- Custom styles for this template -->
         <link href=\"Grayscale/css/grayscale.min.css\" rel=\"stylesheet\">
 
-        <link rel=\"stylesheet\" href=\"CSS/Login.css\" />
+        <link rel=\"stylesheet\" href=\"/CSS/Login.css\" />
     </head>
 
 
@@ -140,11 +140,6 @@ class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170
     </body>
 
 
-    <footer>
-        <div class=\"container text-center\">
-                <p>Copyright &copy; Projet Technique Option WEB | HiteMa 2018 | 48-50 rue Camille Desmoulins - 92130 ISSY LES MOULINEAUX</p>
-        </div>
-    </footer>
 
 
 </html>
@@ -217,7 +212,7 @@ class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170
 
     public function getTemplateName()
     {
-        return "@FOSUser/layout.html.twig";
+        return "FOSUserBundle::layout.html.twig";
     }
 
     public function isTraitable()
@@ -227,7 +222,7 @@ class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170
 
     public function getDebugInfo()
     {
-        return array (  208 => 59,  199 => 58,  188 => 53,  179 => 52,  161 => 9,  131 => 61,  129 => 58,  124 => 55,  122 => 52,  118 => 50,  115 => 49,  109 => 48,  100 => 45,  95 => 44,  90 => 43,  85 => 42,  83 => 41,  79 => 39,  74 => 37,  69 => 36,  67 => 35,  38 => 9,  28 => 1,);
+        return array (  203 => 59,  194 => 58,  183 => 53,  174 => 52,  156 => 9,  131 => 61,  129 => 58,  124 => 55,  122 => 52,  118 => 50,  115 => 49,  109 => 48,  100 => 45,  95 => 44,  90 => 43,  85 => 42,  83 => 41,  79 => 39,  74 => 37,  69 => 36,  67 => 35,  38 => 9,  28 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -261,7 +256,7 @@ class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170
         <!-- Custom styles for this template -->
         <link href=\"Grayscale/css/grayscale.min.css\" rel=\"stylesheet\">
 
-        <link rel=\"stylesheet\" href=\"CSS/Login.css\" />
+        <link rel=\"stylesheet\" href=\"/CSS/Login.css\" />
     </head>
 
 
@@ -312,14 +307,9 @@ class __TwigTemplate_f8154b5efa6465b0c52830b01c30f972c2d823749c171954d174d0e2170
     </body>
 
 
-    <footer>
-        <div class=\"container text-center\">
-                <p>Copyright &copy; Projet Technique Option WEB | HiteMa 2018 | 48-50 rue Camille Desmoulins - 92130 ISSY LES MOULINEAUX</p>
-        </div>
-    </footer>
 
 
 </html>
-", "@FOSUser/layout.html.twig", "/Applications/MAMP/htdocs/WebProject/ProjetTechniqueFinale/ProjetTechniqueFinale/app/Resources/FOSUserBundle/views/layout.html.twig");
+", "FOSUserBundle::layout.html.twig", "/Applications/MAMP/htdocs/WebProject/ProjetTechniqueFinale/ProjetTechniqueFinale/app/Resources/FOSUserBundle/views/layout.html.twig");
     }
 }

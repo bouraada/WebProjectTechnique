@@ -49,7 +49,45 @@ class Programme
      */
     private $ancienneteProgramme;
 
+    /**
+     * @ORM\OneToOne(targetEntity="HistoriqueAbonnement", inversedBy="historiqueabonnement")
+     * @ORM\JoinColumn(name="HistoriqueAbonnement_id", referencedColumnName="id")
+     */
+    private $HistoriqueAbonnement;
+    
+    
+    
+     /**
+     * @ORM\OneToOne(targetEntity="HistoriqueExercice", inversedBy="idProgramme")
+     * @ORM\JoinColumn(name="HistoriqueExercice_id", referencedColumnName="id")
+     */
+    private $historiqueExercice;
+    
 
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Exercice", mappedBy="programme")
+     */
+    private $Exercice;
+    
+   
+     /**
+     * @ORM\ManyToMany(targetEntity="abonne")
+     * @ORM\JoinTable(name="programme_abonne",
+     *      joinColumns={@ORM\JoinColumn(name="Programme_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="abonne_id", referencedColumnName="id")}
+     *      )
+     */   
+    private $abonnes;  
+   
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Entaineur", inversedBy="programme")
+     * @ORM\JoinColumn(name="Entraineur_id", referencedColumnName="id")
+     */
+    private $entreneur;
+    
+    
     /**
      * Get id
      *
@@ -179,4 +217,8 @@ class Programme
     {
         return $this->coachProgramme;
     }
+        public function __construct() {
+        $this->abonnes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 }

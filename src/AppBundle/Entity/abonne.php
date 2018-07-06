@@ -20,11 +20,10 @@ class abonne
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+      
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="iduser", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="User", mappedBy="")
      */
     private $iduser;
 
@@ -69,8 +68,35 @@ class abonne
      * @ORM\Column(name="mobileAbonne", type="integer")
      */
     private $mobileAbonne;
-
-
+    
+    
+    
+    /**
+     * @ORM\OneToOne(targetEntity="HistoriqueAbonnement", inversedBy="historiqueabonnement")
+     * @ORM\JoinColumn(name="HistoriqueAbonnement_id", referencedColumnName="id")
+     */
+    private $HistoriqueAbonnement;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="HistoriqueExercice", inversedBy="abonne")
+     * @ORM\JoinColumn(name="HistoriqueExercice_id", referencedColumnName="id")
+     */
+    private $HistoriqueExercice;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Abonnement", inversedBy="abonne")
+     * @ORM\JoinColumn(name="Abonnement_id", referencedColumnName="id")
+     */
+    private $Abonnement;
+    
+   
+        /**
+     * @ORM\OneToOne(targetEntity="Paiement", inversedBy="abonne")
+     * @ORM\JoinColumn(name="Paiement_id", referencedColumnName="id")
+     */
+    private $Paiement;
+    
+    
     /**
      * Get id
      *
@@ -248,4 +274,6 @@ class abonne
     {
         return $this->mobileAbonne;
     }
+    
+    
 }

@@ -22,11 +22,15 @@ class HistoriqueExercice
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="IdExercice", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="Exercice", mappedBy="historiqueExercice")
      */
     private $idExercice;
+    
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Abonne", mappedBy="HistoriqueAbonne")
+     */
+    private $abonne;
 
     /**
      * @var string
@@ -36,20 +40,17 @@ class HistoriqueExercice
     private $idAbonne;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="IdProgramme", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="Programme", mappedBy="historiqueExercice")
      */
     private $idProgramme;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="IdSeance", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="Seance", mappedBy="historiqueExercice")
      */
     private $idSeance;
-
-
+    
+    
+    
     /**
      * Get id
      *

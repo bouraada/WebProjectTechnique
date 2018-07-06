@@ -57,6 +57,16 @@ class Seance
     private $libelleSeance;
 
 
+    
+    /**
+     * @ORM\OneToOne(targetEntity="HistoriqueExercice", inversedBy="idSeance")
+     * @ORM\JoinColumn(name="HistoriqueExercice_id", referencedColumnName="id")
+     */
+    private $historiqueExercice;
+
+    
+    
+    
     /**
      * Get id
      *

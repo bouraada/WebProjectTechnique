@@ -62,7 +62,20 @@ class Exercice
      * @ORM\Column(name="IntensiteExercice", type="string", length=255)
      */
     private $intensiteExercice;
+    
+     /**
+     * @ORM\OneToOne(targetEntity="HistoriqueExercice", inversedBy="idExercice")
+     * @ORM\JoinColumn(name="Historique_id", referencedColumnName="id")
+     */
+    private $historiqueExercice;
 
+    
+         /**
+     * @ORM\OneToOne(targetEntity="Programme", inversedBy="Exercice")
+     * @ORM\JoinColumn(name="Programme_id", referencedColumnName="id")
+     */
+    private $programme;
+    
 
     /**
      * Get id

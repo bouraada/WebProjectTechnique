@@ -35,12 +35,7 @@ class Abonnement
      */
     private $nomAbonnement;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="PrixAbonneent", type="string", length=255)
-     */
-    private $prixAbonneent;
+
 
     /**
      * @var int
@@ -57,6 +52,20 @@ class Abonnement
     private $dureeAbonnement;
 
 
+    
+    /**
+     * @ORM\OneToOne(targetEntity="HistoriqueAbonnement", inversedBy="historiqueabonnement")
+     * @ORM\JoinColumn(name="HistoriqueAbonnement_id", referencedColumnName="id")
+     */
+    private $HistoriqueAbonnement;
+    
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Paiement", inversedBy="abonnement")
+     * @ORM\JoinColumn(name="Paiement_id", referencedColumnName="id")
+     */
+    private $Paiement;
+    
     /**
      * Get id
      *
@@ -115,29 +124,7 @@ class Abonnement
         return $this->nomAbonnement;
     }
 
-    /**
-     * Set prixAbonneent
-     *
-     * @param string $prixAbonneent
-     *
-     * @return Abonnement
-     */
-    public function setPrixAbonneent($prixAbonneent)
-    {
-        $this->prixAbonneent = $prixAbonneent;
-
-        return $this;
-    }
-
-    /**
-     * Get prixAbonneent
-     *
-     * @return string
-     */
-    public function getPrixAbonneent()
-    {
-        return $this->prixAbonneent;
-    }
+  
 
     /**
      * Set prixAbonnement

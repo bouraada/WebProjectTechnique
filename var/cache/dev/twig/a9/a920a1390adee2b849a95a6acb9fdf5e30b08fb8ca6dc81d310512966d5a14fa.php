@@ -103,13 +103,12 @@ class __TwigTemplate_2664692256849efac44af8b4440356433c7cb19b7b61decbd3484bcc888
 
                 <input class=\"btn btn-primary btn-block btn-large\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"Se connecter\" />
                 <a class=\"btn btn-success btn-block\" href=\"/register\"> Créer un compte </a>
-                <a class=\"btn btn-warning btn-block\" href=\"/register\"> Mot de passe oublié ? </a>
-                <button type=\"button\" class=\"btn btn-warning\">Warning</button>
+                <a class=\"btn btn-warning btn-block\" href=\"/resetting/request\"> Mot de passe oublié ? </a>
             </form>
 
         ";
         }
-        // line 33
+        // line 32
         echo "
     </div>
 
@@ -134,7 +133,7 @@ class __TwigTemplate_2664692256849efac44af8b4440356433c7cb19b7b61decbd3484bcc888
 
     public function getDebugInfo()
     {
-        return array (  113 => 33,  100 => 23,  96 => 22,  91 => 20,  86 => 17,  84 => 16,  80 => 14,  74 => 12,  72 => 11,  68 => 9,  59 => 8,  41 => 5,  11 => 1,);
+        return array (  112 => 32,  100 => 23,  96 => 22,  91 => 20,  86 => 17,  84 => 16,  80 => 14,  74 => 12,  72 => 11,  68 => 9,  59 => 8,  41 => 5,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -174,8 +173,7 @@ class __TwigTemplate_2664692256849efac44af8b4440356433c7cb19b7b61decbd3484bcc888
 
                 <input class=\"btn btn-primary btn-block btn-large\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"Se connecter\" />
                 <a class=\"btn btn-success btn-block\" href=\"/register\"> Créer un compte </a>
-                <a class=\"btn btn-warning btn-block\" href=\"/register\"> Mot de passe oublié ? </a>
-                <button type=\"button\" class=\"btn btn-warning\">Warning</button>
+                <a class=\"btn btn-warning btn-block\" href=\"/resetting/request\"> Mot de passe oublié ? </a>
             </form>
 
         {% endif %}

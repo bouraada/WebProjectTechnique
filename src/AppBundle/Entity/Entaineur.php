@@ -63,7 +63,12 @@ class Entaineur
      */
     private $specialiteEntraineur;
 
-
+    /**
+     * @ORM\OneToOne(targetEntity="Programme", mappedBy="entreneur")
+     */
+    private $programme;
+    
+    
     /**
      * Get id
      *

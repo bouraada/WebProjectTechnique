@@ -18,6 +18,16 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
+    
+    /**
+     * @ORM\OneToOne(targetEntity="abonne", inversedBy="iduser")
+     * @ORM\JoinColumn(name="abonne_id", referencedColumnName="id")
+     *      
+     */
+    private $idabonne;
+
+    
 
     public function __construct()
     {

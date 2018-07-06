@@ -70,6 +70,19 @@ class Paiement
      */
     private $titulaireCINPaiement;
 
+    
+   
+    /**
+     * @ORM\OneToOne(targetEntity="abonne", mappedBy="Paiement")
+     */
+    private $abonne;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Abonnement", mappedBy="Paiement")
+     */
+    private $abonnement;
+                 
+                 
 
     /**
      * Get id

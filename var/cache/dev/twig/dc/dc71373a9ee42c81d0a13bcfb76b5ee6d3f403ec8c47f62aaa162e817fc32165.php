@@ -67,7 +67,10 @@ class __TwigTemplate_0a0c8042d6a1f7460a1ce9697ebb449e1c55d5cae4eed9fa6319578c52b
         echo "   
             <div class=\"row\">
                 <div class=\"col-lg-12\">
-                    <h1 class=\"page-header\">DASHBOARD</h1>
+                    <h1 class=\"page-header\">";
+        // line 8
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
+        echo "</h1>
                 </div>
             </div>
 
@@ -351,7 +354,7 @@ class __TwigTemplate_0a0c8042d6a1f7460a1ce9697ebb449e1c55d5cae4eed9fa6319578c52b
 
     public function getDebugInfo()
     {
-        return array (  59 => 5,  41 => 3,  11 => 1,);
+        return array (  72 => 8,  59 => 5,  41 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -371,7 +374,7 @@ class __TwigTemplate_0a0c8042d6a1f7460a1ce9697ebb449e1c55d5cae4eed9fa6319578c52b
 {% block body %}   
             <div class=\"row\">
                 <div class=\"col-lg-12\">
-                    <h1 class=\"page-header\">DASHBOARD</h1>
+                    <h1 class=\"page-header\">{{ app.user.username  }}</h1>
                 </div>
             </div>
 

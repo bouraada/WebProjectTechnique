@@ -19,18 +19,15 @@
         <!-- Custom styles for this template -->
         <link href="Grayscale/css/grayscale.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="CSS/Login.css" />
+        <link rel="stylesheet" href="/CSS/Login.css" />
     </head>
 
-
     <body id="page-top">
-
         <header class="masthead">
             <div class="intro-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
-
                             <div>
                                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                     {{ app.user.username  }} |
@@ -47,7 +44,6 @@
                                     {% endfor %}
                                 {% endfor %}
                             {% endif %}
-
                             <div>
                                 {% block fos_user_content %}
 
@@ -70,11 +66,6 @@
     </body>
 
 
-    <footer>
-        <div class="container text-center">
-                <p>Copyright &copy; Projet Technique Option WEB | HiteMa 2018 | 48-50 rue Camille Desmoulins - 92130 ISSY LES MOULINEAUX</p>
-        </div>
-    </footer>
 
 
 </html>
