@@ -8,192 +8,143 @@ use Doctrine\ORM\Mapping as ORM;
  * Seance
  *
  * @ORM\Table(name="seance")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\SeanceRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\SeanceRepository")
  */
-class Seance
-{
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+class Seance {
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="DateSeance", type="datetime")
+     * @ORM\Column(name="debut", type="datetime", nullable=false)
      */
-    private $dateSeance;
+    private $debut;
 
     /**
-     * @var int
+     * @var \DateTime
      *
-     * @ORM\Column(name="DureeSeance", type="integer")
+     * @ORM\Column(name="fin", type="datetime", nullable=false)
      */
-    private $dureeSeance;
+    private $fin;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="codeSeance", type="string", length=255)
+     * @ORM\Column(name="statut", type="integer", nullable=false)
      */
-    private $codeSeance;
+    private $statut;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="LibeleSeance", type="string", length=255)
+     * @ORM\Column(name="id_sea", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $libeleSeance;
+    private $idSea;
 
     /**
-     * @var string
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $idUser;
+
+    /**
+     * Set debut
      *
-     * @ORM\Column(name="libelleSeance", type="string", length=255)
-     */
-    private $libelleSeance;
-
-
-    
-    /**
-     * @ORM\OneToOne(targetEntity="HistoriqueExercice", inversedBy="idSeance")
-     * @ORM\JoinColumn(name="HistoriqueExercice_id", referencedColumnName="id")
-     */
-    private $historiqueExercice;
-
-    
-    
-    
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set dateSeance
-     *
-     * @param \DateTime $dateSeance
+     * @param \DateTime $debut
      *
      * @return Seance
      */
-    public function setDateSeance($dateSeance)
-    {
-        $this->dateSeance = $dateSeance;
+    public function setDebut($debut) {
+        $this->debut = $debut;
 
         return $this;
     }
 
     /**
-     * Get dateSeance
+     * Get debut
      *
      * @return \DateTime
      */
-    public function getDateSeance()
-    {
-        return $this->dateSeance;
+    public function getDebut() {
+        return $this->debut;
     }
 
     /**
-     * Set dureeSeance
+     * Set fin
      *
-     * @param integer $dureeSeance
+     * @param \DateTime $fin
      *
      * @return Seance
      */
-    public function setDureeSeance($dureeSeance)
-    {
-        $this->dureeSeance = $dureeSeance;
+    public function setFin($fin) {
+        $this->fin = $fin;
 
         return $this;
     }
 
     /**
-     * Get dureeSeance
+     * Get fin
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getDureeSeance()
-    {
-        return $this->dureeSeance;
+    public function getFin() {
+        return $this->fin;
     }
 
     /**
-     * Set codeSeance
+     * Set statut
      *
-     * @param string $codeSeance
+     * @param integer $statut
      *
      * @return Seance
      */
-    public function setCodeSeance($codeSeance)
-    {
-        $this->codeSeance = $codeSeance;
+    public function setStatut($statut) {
+        $this->statut = $statut;
 
         return $this;
     }
 
     /**
-     * Get codeSeance
+     * Get statut
      *
-     * @return string
+     * @return integer
      */
-    public function getCodeSeance()
-    {
-        return $this->codeSeance;
+    public function getStatut() {
+        return $this->statut;
     }
 
     /**
-     * Set libeleSeance
+     * Get idSea
      *
-     * @param string $libeleSeance
+     * @return integer
+     */
+    public function getIdSea() {
+        return $this->idSea;
+    }
+
+
+    /**
+     * Set idUser
+     *
+     * @param \AppBundle\Entity\Users $idUser
      *
      * @return Seance
      */
-    public function setLibeleSeance($libeleSeance)
+    public function setIdUser(\AppBundle\Entity\Users $idUser)
     {
-        $this->libeleSeance = $libeleSeance;
+        $this->idUser = $idUser;
 
         return $this;
     }
 
     /**
-     * Get libeleSeance
+     * Get idUser
      *
-     * @return string
+     * @return \AppBundle\Entity\Users
      */
-    public function getLibeleSeance()
+    public function getIdUser()
     {
-        return $this->libeleSeance;
-    }
-
-    /**
-     * Set libelleSeance
-     *
-     * @param string $libelleSeance
-     *
-     * @return Seance
-     */
-    public function setLibelleSeance($libelleSeance)
-    {
-        $this->libelleSeance = $libelleSeance;
-
-        return $this;
-    }
-
-    /**
-     * Get libelleSeance
-     *
-     * @return string
-     */
-    public function getLibelleSeance()
-    {
-        return $this->libelleSeance;
+        return $this->idUser;
     }
 }

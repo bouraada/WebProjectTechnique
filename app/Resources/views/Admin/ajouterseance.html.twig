@@ -1,0 +1,50 @@
+{# empty Twig template #}
+{% extends 'BaseAdmin.html.twig' %}
+
+{% block titre %}Ajouter seance{% endblock%}
+
+
+{% block css %}
+
+    <style>
+        .stylecss {
+            font-family:Impact;
+            text-transform: uppercase;
+            size: 20px;
+        }
+        .seance {
+            border : 12px solid white ;
+            text-align: center;
+        }
+    </style>
+{% endblock%}
+
+
+
+{% block body %} 
+
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Nouvelle seance</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="panel panel-danger">
+                <div class=" panel-heading">
+                    Ajoutez une nouvelle seance :
+                </div>
+                <div class="panel-body">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

@@ -29,7 +29,15 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    redirect.after.login:
+        class: AppBundle\Listener\Authentication\SuccessHandler
+        arguments: ['@router']    
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }

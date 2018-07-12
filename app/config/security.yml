@@ -1,5 +1,3 @@
-# To get started with security, check out the documentation:
-# https://symfony.com/doc/current/security.html
 security:
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
@@ -16,10 +14,21 @@ security:
         main:
             pattern: ^/
             form_login:
-                provider: fos_userbundle
+
+                #provider:  in_memory
                 csrf_token_generator: security.csrf.token_manager
-                login_path: /
-                default_target_path : /user/home
+                # if you are using Symfony < 2.8, use the following config instead:
+                # csrf_provider: form.csrf_provider
+                success_handler: redirect.after.login
+
+                check_path: /login_check
+                login_path: /login
+                provider: fos_userbundle
+                login_path: fos_user_security_login
+                use_forward: false
+                check_path: fos_user_security_check
+                failure_path: null
+                default_target_path: /login
 
             logout:       true
             anonymous:    true
@@ -28,6 +37,5 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/dashboard, role: IS_AUTHENTICATED_REMEMBERED }
-        - { path: ^/user/, role: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/coach/, role: ROLE_ADMIN }
+        - { path: ^/user/, role: ROLE_USER }

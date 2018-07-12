@@ -1,0 +1,127 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Paiment
+ *
+ * @ORM\Table(name="paiment")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\PaiementRepository")
+ */
+class Paiment
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="statut", type="integer", nullable=false)
+     */
+    private $statut;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_paie", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPaie;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Abonnement")
+     * @ORM\JoinColumn(name="id_abo", referencedColumnName="id_abo")
+     */
+    private $idAbo;
+
+
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Paiment
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set statut
+     *
+     * @param integer $statut
+     *
+     * @return Paiment
+     */
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * Get statut
+     *
+     * @return integer
+     */
+    public function getStatut()
+    {
+        return $this->statut;
+    }
+
+    /**
+     * Get idPaie
+     *
+     * @return integer
+     */
+    public function getIdPaie()
+    {
+        return $this->idPaie;
+    }
+
+    /**
+     * Set idAbo
+     *
+     * @param \AppBundle\Entity\Abonnement $idAbo
+     *
+     * @return Paiment
+     */
+    public function setIdAbo(\AppBundle\Entity\Abonnement $idAbo = null)
+    {
+        $this->idAbo = $idAbo;
+
+        return $this;
+    }
+
+    /**
+     * Get idAbo
+     *
+     * @return \AppBundle\Entity\Abonnement
+     */
+    public function getIdAbo()
+    {
+        return $this->idAbo;
+    }
+}

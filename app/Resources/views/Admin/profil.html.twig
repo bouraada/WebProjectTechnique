@@ -1,0 +1,108 @@
+{% extends 'BaseAdmin.html.twig' %}
+
+{% block titre %}Mon profil{% endblock%}
+
+{% block body %}   
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">MON PROFIL</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-2 hidden-xs">
+        </div>
+        <div class="row">
+            <div class="col-md-10 ">
+                <form class="form-horizontal">
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Prenom">pseudo</label>  
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        {{  app.user.username}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Email Address"> Addresse email</label>  
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon"> <i class="fa fa-user"></i>
+                                        {{  app.user.email}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="pseudo">Etat </label>  
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        Compte activé 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Age">Role</label>  
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        {% if is_granted('ROLE_ADMIN') %}
+    Administrator
+{% elseif is_granted('ROLE_USER') %}
+    User
+{% else %}
+    Anonymous
+{% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Mobile">Derniére connexion</label>  
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        {{  app.user.lastLogin |localizeddate('none', 'none', null, null, 'EEEE')}}
+                                        {{  app.user.lastLogin |date("h:m")}}
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+                <a class="btn btn-danger btn-block" href=" /profile/edit"> Modifier votre profil</a>
+                <a class="btn btn-danger btn-block" href="/profile/change-password">Modifier votre mot de passe</a>
+            </div>
+            <div class="col-md-2 hidden-xs">
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="abonnement.service.class">AppBundle\Services\AbonnementService</parameter>
+    </parameters>
+  
+    <services>   
+        <service id="abonnement.get.all" class="%abonnement.service.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+    </services>
+</container>
+

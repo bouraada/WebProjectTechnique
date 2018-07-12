@@ -8,169 +8,151 @@ use Doctrine\ORM\Mapping as ORM;
  * Abonnement
  *
  * @ORM\Table(name="abonnement")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\AbonnementRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\AbonnementRepository")
  */
 class Abonnement
 {
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="titre", type="string", length=50, nullable=false)
+     */
+    private $titre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=50, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prix", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $prix;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_abo", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="TypeAbonnement", type="string", length=255)
-     */
-    private $typeAbonnement;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="NomAbonnement", type="string", length=255)
-     */
-    private $nomAbonnement;
-
-
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="PrixAbonnement", type="integer")
-     */
-    private $prixAbonnement;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="DureeAbonnement", type="integer")
-     */
-    private $dureeAbonnement;
-
-
+    private $idAbo;
     
     /**
-     * @ORM\OneToOne(targetEntity="HistoriqueAbonnement", inversedBy="historiqueabonnement")
-     * @ORM\JoinColumn(name="HistoriqueAbonnement_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $HistoriqueAbonnement;
-    
-    
-    /**
-     * @ORM\OneToOne(targetEntity="Paiement", inversedBy="abonnement")
-     * @ORM\JoinColumn(name="Paiement_id", referencedColumnName="id")
-     */
-    private $Paiement;
-    
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $idUser;
+
+
 
     /**
-     * Set typeAbonnement
+     * Set titre
      *
-     * @param string $typeAbonnement
+     * @param string $titre
      *
      * @return Abonnement
      */
-    public function setTypeAbonnement($typeAbonnement)
+    public function setTitre($titre)
     {
-        $this->typeAbonnement = $typeAbonnement;
+        $this->titre = $titre;
 
         return $this;
     }
 
     /**
-     * Get typeAbonnement
+     * Get titre
      *
      * @return string
      */
-    public function getTypeAbonnement()
+    public function getTitre()
     {
-        return $this->typeAbonnement;
+        return $this->titre;
     }
 
     /**
-     * Set nomAbonnement
+     * Set type
      *
-     * @param string $nomAbonnement
+     * @param string $type
      *
      * @return Abonnement
      */
-    public function setNomAbonnement($nomAbonnement)
+    public function setType($type)
     {
-        $this->nomAbonnement = $nomAbonnement;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get nomAbonnement
+     * Get type
      *
      * @return string
      */
-    public function getNomAbonnement()
+    public function getType()
     {
-        return $this->nomAbonnement;
+        return $this->type;
     }
 
-  
-
     /**
-     * Set prixAbonnement
+     * Set prix
      *
-     * @param integer $prixAbonnement
+     * @param float $prix
      *
      * @return Abonnement
      */
-    public function setPrixAbonnement($prixAbonnement)
+    public function setPrix($prix)
     {
-        $this->prixAbonnement = $prixAbonnement;
+        $this->prix = $prix;
 
         return $this;
     }
 
     /**
-     * Get prixAbonnement
+     * Get prix
      *
-     * @return int
+     * @return float
      */
-    public function getPrixAbonnement()
+    public function getPrix()
     {
-        return $this->prixAbonnement;
+        return $this->prix;
     }
 
     /**
-     * Set dureeAbonnement
+     * Get idAbo
      *
-     * @param integer $dureeAbonnement
+     * @return integer
+     */
+    public function getIdAbo()
+    {
+        return $this->idAbo;
+    }
+
+    /**
+     * Set idUser
+     *
+     * @param \AppBundle\Entity\Users $idUser
      *
      * @return Abonnement
      */
-    public function setDureeAbonnement($dureeAbonnement)
+    public function setIdUser(\AppBundle\Entity\Users $idUser)
     {
-        $this->dureeAbonnement = $dureeAbonnement;
+        $this->idUser = $idUser;
 
         return $this;
     }
 
     /**
-     * Get dureeAbonnement
+     * Get idUser
      *
-     * @return int
+     * @return \AppBundle\Entity\Users
      */
-    public function getDureeAbonnement()
+    public function getIdUser()
     {
-        return $this->dureeAbonnement;
+        return $this->idUser;
     }
 }

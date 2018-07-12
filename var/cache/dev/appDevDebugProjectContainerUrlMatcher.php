@@ -107,9 +107,37 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // coachDashboard
-        if ('/coach/dashboard' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\CoachController::indexAction',  '_route' => 'coachDashboard',);
+        elseif (0 === strpos($pathinfo, '/coach')) {
+            // adminDashboard
+            if ('/coach/dashboard' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::indexAction',  '_route' => 'adminDashboard',);
+            }
+
+            // coachMonProgramme
+            if ('/coach/monprogramme' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::MonProgrammeAction',  '_route' => 'coachMonProgramme',);
+            }
+
+            // coachMesSeances
+            if ('/coach/messeances' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::MesSeancesAction',  '_route' => 'coachMesSeances',);
+            }
+
+            // coachProfil
+            if ('/coach/profil' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::profilAction',  '_route' => 'coachProfil',);
+            }
+
+            // ajouterprogrammecoach
+            if ('/coach/ajouterprogramme' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::ajouterprogrammeAction',  '_route' => 'ajouterprogrammecoach',);
+            }
+
+            // ajouterseancecoach
+            if ('/coach/ajouterseance' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\AdminController::ajouterseanceAction',  '_route' => 'ajouterseancecoach',);
+            }
+
         }
 
         // homepage
@@ -133,14 +161,29 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\UserController::homeAction',  '_route' => 'userhome',);
             }
 
+            // inscription
+            if ('/user/inscription' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::inscriptionAction',  '_route' => 'inscription',);
+            }
+
             // userProfil
-            if (0 === strpos($pathinfo, '/user/profil') && preg_match('#^/user/profil/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'userProfil')), array (  '_controller' => 'AppBundle\\Controller\\UserController::profilAction',));
+            if ('/user/profil' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::profilAction',  '_route' => 'userProfil',);
+            }
+
+            // payement
+            if ('/user/payement' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::PayementAction',  '_route' => 'payement',);
             }
 
             // userDashboard
             if ('/user/calendrier' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\UserController::CalendrierAction',  '_route' => 'userDashboard',);
+            }
+
+            // boutique
+            if ('/user/boutique' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::BoutiqueAction',  '_route' => 'boutique',);
             }
 
             if (0 === strpos($pathinfo, '/user/m')) {
@@ -155,7 +198,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 }
 
                 // userMonProgramme
-                if ('/user/monprogramme' === $pathinfo) {
+                if ('/user/monabonnement' === $pathinfo) {
                     return array (  '_controller' => 'AppBundle\\Controller\\UserController::MonProgrammeAction',  '_route' => 'userMonProgramme',);
                 }
 
